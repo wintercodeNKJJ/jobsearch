@@ -11,7 +11,7 @@ const DitailJobdescription = ({info}) => {
         <p>{info.description}</p>
         </div>
         <div>
-            <img src={mag} alt="job" className=' rounded-xl bg-blue-400 h-52 w-full'/>
+            <img src={mag} alt="job" className=' rounded-xl bg-blue-400 h-52 w-full object-cover'/>
         </div>
       </div>
       <div className='my-2'>

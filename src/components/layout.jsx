@@ -11,7 +11,7 @@ const Layout = () => {
   const [showNav, setshowNav] = useState(false)
   return (
     <div className='flex relative'>
-      <div className={showNav?'rounded-xl z-20 absolute top-2 left-2 backdrop-blur p-2 translate-x-56 transition-all duration-500 border border-gray-300':'rounded-xl z-20 absolute top-2 left-2 backdrop-blur p-2 transition-all duration-500 border border-gray-300'} onClick={()=>(setshowNav(!showNav))}>{showNav?<BsArrowLeft size={20}/>:<BsArrowRight size={20}/>}</div>
+      <div className={showNav?'rounded-xl z-20 absolute md:hidden top-2 left-2 backdrop-blur p-2 translate-x-56 transition-all duration-500 border border-gray-300':'rounded-xl z-20 absolute md:hidden top-2 left-2 backdrop-blur p-2 transition-all duration-500 border border-gray-300'} onClick={()=>(setshowNav(!showNav))}>{showNav?<BsArrowLeft size={20}/>:<BsArrowRight size={20}/>}</div>
       <div className={showNav?'h-screen min-w-[250px] absolute z-10 bg-gray-300 md:static transition-all duration-500':' h-screen min-w-[250px] absolute z-10 bg-gray-300 md:static md:translate-x-0 -translate-x-full transition-all duration-500'}>
         <Navbar/>
       </div>
