@@ -10,6 +10,8 @@ export const StateContext = ({ children }) => {
   const [displayData, setDisplayData] = useState([]);
   const [ditailsdata, setDitailsdata] = useState(null);
   const [ditailsindex, setDitailsindex] = useState(-1);
+  const [showditail, setShowditail] = useState(false)
+
 
   const [logedin, setLogedin] = useState(false)
   const [logedout, setLogedout] = useState(true)
@@ -78,6 +80,8 @@ export const StateContext = ({ children }) => {
     ditails,
     ditailsdata,
     ditailsindex,
+    showditail,
+    setShowditail
   }}>
     {children}
   </Context.Provider>);

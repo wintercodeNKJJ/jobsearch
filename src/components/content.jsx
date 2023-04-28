@@ -4,7 +4,7 @@ import { HiFilter } from "react-icons/hi";
 import { useStateContext } from "../context/context";
 
 const Content = () => {
-  const {displayData, ditailsindex, ditails} = useStateContext()
+  const {displayData, ditailsindex, ditails,setShowditail} = useStateContext()
 
   return (
     <div className=" overflow-y-scroll h-screen relative">
@@ -33,7 +33,7 @@ const Content = () => {
 
       <div>
         {displayData.map((item,i) => (
-          <div className={((i+1)===ditailsindex)?"flex justify-between border-b bg-blue-400":"flex justify-between border-b"} onClick={()=>(ditails(item))}>
+          <div className={((i+1)===ditailsindex)?"flex justify-between border-b bg-blue-400":"flex justify-between border-b"} onClick={()=>{ditails(item); setShowditail(true)}}>
             <div className="flex items-center p-2 gap-2">
               <div className="h-10 w-10 rounded-full bg-blue-500"></div>
               <div className="text-left">
