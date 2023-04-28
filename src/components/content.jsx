@@ -11,7 +11,7 @@ const Content = () => {
       <div className="flex py-4 border-b backdrop-blur border-gray-200 sticky top-0">
         <div className="flex justify-between w-3/4 gap-2 px-3">
           <h1 className="text-xl text-blue-400">Site search</h1>
-          <input type="text" className="w-1/2 bg-transparent" />
+          <input type="text" className="w-1/2 bg-transparent rounded-xl px-2" />
           <span className="">
             <AiOutlineSearch size={30} />
           </span>
@@ -21,7 +21,13 @@ const Content = () => {
           <span>
             <HiFilter size={20} />
           </span>
-          <span className="text-sm">filter list</span>
+          <select className="text-sm border-none bg-transparent p-2" multiple size={2} defaultValue="0">
+            <option value="0">filter list</option>
+            <option value="1">Igeniering</option>
+            <option value="1">office</option>
+            <option value="1">Hous</option>
+            <option value="1">latest</option>
+          </select>
         </div>
       </div>
 
