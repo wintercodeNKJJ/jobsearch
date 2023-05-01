@@ -1,5 +1,5 @@
 import React from "react";
-import image1 from "../../assets/Desktop - 2job derciptio .jpg";
+import image1 from "../../assets/company.jpg";
 
 const DitailAboutcompany = ({info}) => {
   return (

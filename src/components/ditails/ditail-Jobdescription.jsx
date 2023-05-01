@@ -1,8 +1,7 @@
 import React from 'react'
-import mag from '../../assets/Desktop - 2job derciptio .jpg'
+import mag from '../../assets/job.jpg'
 
 const DitailJobdescription = ({info}) => {
-    console.log(info)
   return (
     <div className=" text-left text-sm Roboto-light relative">
       <div className='my-2 grid grid-cols-1 md:grid-cols-2'>
