@@ -52,8 +52,38 @@ const Ditail = () => {
     }
   }
 
+  let day = new Date();
+  let time = "";
+  let closed = false;
+
+  if (ditailsdata) {
+    time = ditailsdata.dateline;
+    time = time.split(" ");
+
+    if (day.getFullYear() < parseInt(time[2])) {
+      closed = false;
+    } else {
+      if (
+        day.getMonth() + 1 < parseInt(time[1]) &&
+        day.getFullYear() === parseInt(time[2])
+      ) {
+        closed = false;
+      } else {
+        if (
+          day.getDay() < parseInt(time[0]) &&
+          day.getMonth() + 1 === parseInt(time[1])
+        ) {
+          closed = false;
+        } else {
+          console.log("closed", time, day);
+          closed = true;
+        }
+      }
+    }
+  }
+
   return (
-    <div className=" bg-gray-100 overflow-y-scroll h-screen">
+    <div className=" bg-base-200 duration-1000 overflow-y-scroll h-screen">
       {!ditailsdata && (
         <div className="flex justify-center items-center h-screen">
           Select an item
@@ -87,7 +117,7 @@ const Ditail = () => {
           </div>
           <div className="px-3">
             <div className="flex gap-2">
-              {jobinfo && (
+              {jobinfo && !closed && (
                 <div className="shadow-lg w-60 h-10 items-center flex justify-around border-2 rounded-xl border-orange-400 text-orange-400">
                   <BsClock size={20} />
                   <div className="flex">
@@ -95,7 +125,7 @@ const Ditail = () => {
                   </div>
                 </div>
               )}
-              {jobinfo && (
+              {jobinfo && closed && (
                 <div>
                   <div className="shadow-lg w-full px-2 h-10 items-center flex justify-around border-2 rounded-xl border-red-400 text-red-400">
                     <MdOutbound size={20} />

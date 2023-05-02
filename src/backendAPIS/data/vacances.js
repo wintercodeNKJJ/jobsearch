@@ -1,7 +1,7 @@
 export const vacances = [
     {
         index:1,
-        dateline: '22 jun 2023',
+        dateline: '22 06 2023',
         views: 200,
         favorite: false,
         name:'Designer',
@@ -30,7 +30,7 @@ export const vacances = [
         company: 1,
     },{
         index:2,
-        dateline: '18 jun 2023',
+        dateline: '18 06 2023',
         views: 310,
         favorite: true,
         name:'Developer',
@@ -59,7 +59,7 @@ export const vacances = [
         company: 1,
     },{
         index:3,
-        dateline: '19 jun 2023',
+        dateline: '19 06 2023',
         views: 20,
         favorite: false,
         name:'Chief Cook',
@@ -88,7 +88,7 @@ export const vacances = [
         company: 1,
     },{
         index:4,
-        dateline: '15 may 2023',
+        dateline: '15 05 2023',
         views: 12,
         favorite: false,
         name:'Carpenter',
@@ -117,7 +117,7 @@ export const vacances = [
         company: 1,
     },{
         index:5,
-        dateline: '29 may 2023',
+        dateline: '29 05 2023',
         views: 100,
         favorite: true,
         name:'Manager',
@@ -146,7 +146,7 @@ export const vacances = [
         company: 1,
     },{
         index:6,
-        dateline: '20 may 2023',
+        dateline: '20 05 2023',
         views: 130,
         favorite: false,
         name:'Hous keeper',
@@ -175,7 +175,7 @@ export const vacances = [
         company: 2,
     },{
         index:7,
-        dateline: '23 may 2023',
+        dateline: '23 05 2023',
         views: 300,
         favorite: false,
         name:'Waiter',
@@ -204,7 +204,7 @@ export const vacances = [
         company: 2,
     },{
         index:8,
-        dateline: '29 April 2024',
+        dateline: '29 04 2024',
         views: 50,
         favorite: false,
         name:'Gardener',
@@ -233,7 +233,7 @@ export const vacances = [
         company: 2,
     },{
         index:9,
-        dateline: '16 july 2023',
+        dateline: '16 07 2023',
         views: 300,
         favorite: false,
         name:'Database Manager',
@@ -262,7 +262,7 @@ export const vacances = [
         company: 3,
     },{
         index:10,
-        dateline: '26 july 2023',
+        dateline: '26 07 2023',
         views: 300,
         favorite: true,
         name:'Network Analist',
@@ -291,7 +291,7 @@ export const vacances = [
         company: 3,
     },{
         index:11,
-        dateline: '6 july 2023',
+        dateline: '6 07 2023',
         views: 300,
         favorite: false,
         name:'Hair dresser',
@@ -318,7 +318,7 @@ export const vacances = [
         company: 3,
     },{
         index:12,
-        dateline: '29 April 2023',
+        dateline: '29 04 2023',
         views: 20,
         favorite: false,
         name:'Teacher',
@@ -341,7 +341,7 @@ export const vacances = [
         company: 3,
     },{
         index:13,
-        dateline: '22 May 2023',
+        dateline: '22 05 2023',
         views: 350,
         favorite: true,
         name:'Architect',
@@ -367,7 +367,7 @@ export const vacances = [
         company: 3,
     },{
         index:14,
-        dateline: '21 may 2023',
+        dateline: '21 05 2023',
         views: 320,
         favorite: true,
         name:'Chemist',
@@ -392,7 +392,7 @@ export const vacances = [
         company: 3,
     },{
         index:15,
-        dateline: '24 Jun 2023',
+        dateline: '24 06 2023',
         views: 110,
         favorite: true,
         name:'Neurs',
@@ -421,7 +421,7 @@ export const vacances = [
         company: 4,
     },{
         index:16,
-        dateline: '19 july 2023',
+        dateline: '19 07 2023',
         views: 300,
         favorite: true,
         name:'Care Taker',

@@ -12,7 +12,7 @@ const Content = () => {
     useStateContext();
     
   return (
-    <div className=" bg-base-100">
+    <div className=" bg-base-100 duration-1000">
       {!displayData && !profileInfo && (
         <div className="flex justify-center items-center h-screen">
           Select a category
@@ -143,14 +143,14 @@ const Content = () => {
             </div>
             <h1 className="text-left text-gray-400 text-xs">Personal Info</h1>
             <div>
-              <div className="text-left Roboto-medium text-base flex flex-col items-baseline gap-2">
+              <div className="text-left Roboto-medium text-neutral flex flex-col items-baseline gap-2">
                 
                 <div className="flex justify-between items-center py-1 px-2 border-b border-gray-200 w-full">
                 <div className="flex gap-1">
                     <p>name:</p>
                     <input type="text" className="Roboto-light" id="profName" disabled={edit[0]} defaultValue={profileInfo.name}/>
                   </div>
-                  <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2" onClick={()=>{editProf("name"); document.getElementById("profName").focus();}}>
+                  <div className={edit[0]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"} onClick={()=>{editProf("name"); document.getElementById("profName").focus();}}>
                     <MdEdit />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const Content = () => {
                     <p>surname:</p>
                     <input type="text" className="Roboto-light" id="surName" disabled={edit[1]} defaultValue={profileInfo.surname}/>
                   </div>
-                  <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2" onClick={()=>{editProf("surname"); document.getElementById("surName").focus();}}>
+                  <div className={edit[1]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"} onClick={()=>{editProf("surname"); document.getElementById("surName").focus();}}>
                     <MdEdit />
                   </div>
                 </div>
@@ -170,7 +170,7 @@ const Content = () => {
                     <p>birth date:</p>
                     <input type="text" className="Roboto-light" id="birthD" disabled={edit[2]} defaultValue={profileInfo.birthDate}/>
                   </div>
-                  <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2" onClick={()=>{editProf("birth"); document.getElementById("birthD").focus();}}>
+                  <div className={edit[2]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"} onClick={()=>{editProf("birth"); document.getElementById("birthD").focus();}}>
                     <MdEdit />
                   </div>
                 </div>
@@ -180,7 +180,7 @@ const Content = () => {
                     <p>phone:</p>
                     <input type="text" className="Roboto-light" id="phone" disabled={edit[3]} defaultValue={profileInfo.phone}/>
                   </div>
-                  <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2" onClick={()=>{editProf("phone"); document.getElementById("phone").focus();}}>
+                  <div className={edit[3]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"} onClick={()=>{editProf("phone"); document.getElementById("phone").focus();}}>
                     <MdEdit />
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const Content = () => {
                     <p>address:</p>
                     <input type="text" className="Roboto-light" id="profName" disabled={edit[4]} defaultValue={profileInfo.address}/>
                   </div>
-                  <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2" onClick={()=>(editProf("address"))}>
+                  <div className={edit[4]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"} onClick={()=>(editProf("address"))}>
                     <MdEdit />
                   </div>
                 </div>
@@ -214,7 +214,7 @@ const Content = () => {
                           <h1 className="Roboto-light">{item.description}</h1>
                         </div>
                       </div>
-                      <div className="rounded-xl p-2 bg-gray-200 flex items-center gap-2">
+                      <div className={edit[5]?"rounded-xl p-2 bg-base-200 items-center":"rounded-xl p-2 bg-warning text-black items-center"}>
                         <MdEdit />
                       </div>
                     </div>

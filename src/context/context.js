@@ -13,6 +13,7 @@ export const StateContext = ({ children }) => {
   const [ditailsdata, setDitailsdata] = useState(null);
   const [ditailsindex, setDitailsindex] = useState(-1);
   const [showditail, setShowditail] = useState(false);
+  const [showNav, setshowNav] = useState(false);
   const [favo, setFavo] = useState(
     vacances.filter((item) => item.favorite === true)
   );
@@ -21,37 +22,37 @@ export const StateContext = ({ children }) => {
   const [logedin, setLogedin] = useState(false);
   const [logedout, setLogedout] = useState(true);
 
-  const [theme, setTheme] = useState('mylight');
-  function toggleTheme(opt){
-    setTheme(opt === 'mydark' ?'mydark':'mylight');
-    console.log(theme)
-  };
+  const [theme, setTheme] = useState("mylight");
+  function toggleTheme(opt) {
+    setTheme(opt === "mydark" ? "mydark" : "mylight");
+    console.log(theme);
+  }
 
-  const [edit, setEdit] = useState([true,true,true,true,true,true])
-  function editProf(label){
+  const [edit, setEdit] = useState([true, true, true, true, true, true]);
+  function editProf(label) {
     switch (label) {
-      case 'name':
-        setEdit([false,true,true,true,true,true])
-        console.log(edit)
+      case "name":
+        setEdit([false, true, true, true, true, true]);
+        console.log(edit);
         break;
-        case 'surname':
-          setEdit([true,false,true,true,true,true])
-          break;
-          case 'birth':
-        setEdit([true,true,false,true,true,true])
+      case "surname":
+        setEdit([true, false, true, true, true, true]);
         break;
-        case 'phone':
-        setEdit([true,true,true,false,true,true])
+      case "birth":
+        setEdit([true, true, false, true, true, true]);
         break;
-        case 'address':
-        setEdit([true,true,true,true,false,true])
+      case "phone":
+        setEdit([true, true, true, false, true, true]);
         break;
-        case 'category':
-        setEdit([true,true,true,true,true,false])
+      case "address":
+        setEdit([true, true, true, true, false, true]);
         break;
-    
+      case "category":
+        setEdit([true, true, true, true, true, false]);
+        break;
+
       default:
-        setEdit([true,true,true,true,true,true])
+        setEdit([true, true, true, true, true, true]);
         break;
     }
   }
@@ -130,15 +131,16 @@ export const StateContext = ({ children }) => {
     }
   }, [displaycontent]);
 
-  const { t, i18n } = useTranslation();  
-  const changeLanguage = lng => {  
-    i18n.changeLanguage(lng);  
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
   return (
     <Context.Provider
       value={{
-        changeLanguage,t,
+        changeLanguage,
+        t,
         logedin,
         logedout,
         login,
@@ -155,8 +157,12 @@ export const StateContext = ({ children }) => {
         favo,
         setFavo,
         profileInfo,
-        toggleTheme,theme,
-        editProf,edit,
+        toggleTheme,
+        theme,
+        editProf,
+        edit,
+        showNav,
+        setshowNav,
       }}
     >
       {children}

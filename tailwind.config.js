@@ -2,32 +2,46 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'navtop':{
+          50: '#60a5fa'
+        }
+      }
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
         mylight: {
-          primary: "#ffffff",
-          secondary: "#f6d860",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
+          primary: "#60a5fa",
+          secondary: "#8d939d",
+          neutral: "#2e3034",
           "base-100": "#ffffff",
+          "base-200": "#f3f4f6",
+          "base-300": "#d4d7dd",
         },
       },
       {
         mydark: {
-          primary: "#000000",
-          secondary: "#f6d860",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
-          "base-100": "#000000",
+          primary: "#60a5fa",
+          secondary: "#8d939d",
+          neutral: "#cccccc",
+          "base-100": "#252526",
+          "base-200": "#1e1e1e",
+          "base-300": "#d4d7dd",
         },
       },
     ],
   },
 }
+
+          // accent: "#37cdbe",
+          // info:'',
+          // warning:'',
+          // success:'',
+          // error:'',
 
 // module.exports = {
 //   //...

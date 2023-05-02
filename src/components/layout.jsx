@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './navbar'
 import Content from './content'
 import Ditail from './ditails/ditail'
@@ -7,8 +7,7 @@ import { MdClose } from 'react-icons/md'
 import { useStateContext } from '../context/context'
 
 const Layout = () => {
-  const{showditail,setShowditail,theme} = useStateContext()
-  const [showNav, setshowNav] = useState(false)
+  const{showditail,setShowditail,theme,showNav,setshowNav} = useStateContext()
 
   useEffect(() => {
     document.querySelector('html').setAttribute('data-theme',theme)
