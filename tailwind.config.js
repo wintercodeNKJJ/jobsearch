@@ -28,14 +28,25 @@ module.exports = {
           primary: "#60a5fa",
           secondary: "#8d939d",
           neutral: "#cccccc",
-          "base-100": "#252526",
-          "base-200": "#1e1e1e",
-          "base-300": "#d4d7dd",
+          "base-100": "#585858",
+          "base-200": "#373636",
+          "base-300": "#5c5c5e",
         },
       },
     ],
   },
 }
+
+// {
+//   mydark: {
+//     primary: "#60a5fa",
+//     secondary: "#8d939d",
+//     neutral: "#cccccc",
+//     "base-100": "#252526",
+//     "base-200": "#1e1e1e",
+//     "base-300": "#d4d7dd",
+//   },
+// },
 
           // accent: "#37cdbe",
           // info:'',

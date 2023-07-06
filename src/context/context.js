@@ -1,23 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { vacances } from "../backendAPIS/data/vacances";
-import { company } from "../backendAPIS/data/companies";
-import { categories } from "../backendAPIS/data/categories";
-import { profile } from "../backendAPIS/data/profileInfo";
 import { useTranslation } from "react-i18next";
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [displaycontent, setDisplaycontent] = useState(0);
-  const [displayData, setDisplayData] = useState([]);
+  // const [displaycontent, setDisplaycontent] = useState(0);
+  // const [displayData, setDisplayData] = useState([]);
   const [ditailsdata, setDitailsdata] = useState(null);
-  const [ditailsindex, setDitailsindex] = useState(-1);
+  const [jobsdata, setJobsData] = useState(null);
   const [showditail, setShowditail] = useState(false);
   const [showNav, setshowNav] = useState(false);
-  const [favo, setFavo] = useState(
-    vacances.filter((item) => item.favorite === true)
-  );
-  const [profileInfo, setProfileInfo] = useState(profile);
 
   const [logedin, setLogedin] = useState(false);
   const [logedout, setLogedout] = useState(true);
@@ -68,68 +60,45 @@ export const StateContext = ({ children }) => {
     console.log("logout");
   }
 
-  function display(opt) {
-    switch (opt) {
-      case "vac":
-        setDisplaycontent(1);
-        break;
-      case "cat":
-        setDisplaycontent(2);
-        break;
-      case "comp":
-        setDisplaycontent(3);
-        break;
-      case "fav":
-        setDisplaycontent(5);
-        break;
-      case "prof":
-        setDisplaycontent(6);
-        break;
-      default:
-        setDisplaycontent(0);
-        break;
-    }
+  function jobOfferDitails(data) {
+    console.log("data tranfer",data)
+    const ben = data.benefits ? data.benefits.split(";") : null
+    const pre = data.prerequest ? data.prerequest.split(";") : null
+    const tas = data.task ? data.task.split(";") : null 
+    data = {...data,prerequest:pre,benefits:ben,task:tas}
+    setJobsData(data);
   }
 
-  function ditails(data) {
-    setDitailsdata(data);
-    setDitailsindex(data.index);
+  const [applicants, setApplicants] = useState()
+  const jobOfferApplicants = (data)=>{
+    setApplicants(data)
   }
 
   function resetditails() {
     setDitailsdata(null);
-    setDitailsindex(-1);
   }
 
   useEffect(() => {
-    if (displaycontent !== 6) {
-      setProfileInfo(null);
+
+    if(localStorage.getItem('token')){
+      setLogedin(true);
+      setLogedout(false);
     }
-    switch (displaycontent) {
-      case 1:
-        setDisplayData(vacances);
-        break;
-      case 3:
-        setDisplayData(company);
-        break;
-      case 2:
-        setDisplayData(categories);
-        break;
-      case 5:
-        let favdata = [];
-        favdata = vacances.filter((item) => item.favorite === true);
-        favdata = favdata.length >= 1 ? favdata : null;
-        setDisplayData(favdata);
-        break;
-      case 6:
-        setDisplayData(null);
-        setProfileInfo(profile);
-        break;
-      default:
-        setDisplayData(null);
-        break;
-    }
-  }, [displaycontent]);
+  }, []);
+
+  // Notification
+  const [type, setType] = useState()
+  const [message, setMessage] = useState()
+  const [time, setTime] = useState()
+  const [render, setRender] = useState(0)
+
+  const notify = (type1,message1,time1)=>{
+    setType(type1)
+    setMessage(message1)
+    setTime(time1)
+    setRender(render+1)
+    console.log("render",render)
+  }
 
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
@@ -143,26 +112,31 @@ export const StateContext = ({ children }) => {
         t,
         logedin,
         logedout,
+        setLogedin,
+        setLogedout,
         login,
         logout,
-        displayData,
-        display,
-        displaycontent,
-        ditails,
+        // displayData,
+        jobsdata,
+        // displaycontent,
+        jobOfferDitails,
         ditailsdata,
-        ditailsindex,
         resetditails,
         showditail,
         setShowditail,
-        favo,
-        setFavo,
-        profileInfo,
         toggleTheme,
         theme,
         editProf,
         edit,
         showNav,
         setshowNav,
+        notify,
+        time,
+        message,
+        type,
+        render,
+        applicants,
+        jobOfferApplicants
       }}
     >
       {children}
