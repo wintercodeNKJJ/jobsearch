@@ -8,7 +8,7 @@ const getUser = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}/user`,requestOptions).then((respons)=>{
+    return fetch(`https://${ip}/user`,requestOptions).then((respons)=>{
         // respons.json()
         respons.json().then(res=>{
             console.log("store",JSON.stringify(res))
@@ -23,14 +23,14 @@ const registerUser = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}/register`,requestOptions).then((respons)=>{
+    return fetch(`https://${ip}/register`,requestOptions).then((respons)=>{
         respons.json()
     })
 }
 
 //Jobs Query
 const getJobs = async()=>{
-    return fetch(`http://${ip}/Jobs`,{method:'get'}).then((respons)=> respons.json())
+    return fetch(`https://${ip}/Jobs`,{method:'get'}).then((respons)=> respons.json())
 }
 
 const createJob = async(job)=>{
@@ -39,7 +39,7 @@ const createJob = async(job)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(job)
     }
-    return fetch(`http://${ip}/createJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/createJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const editJob = async(job)=>{
@@ -48,7 +48,7 @@ const editJob = async(job)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(job)
     }
-    return fetch(`http://${ip}/editJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/editJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const deleteJob = async(data)=>{
@@ -57,11 +57,11 @@ const deleteJob = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}/deleteJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/deleteJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const getJob = async(id)=>{
-    return fetch(`http://${ip}/Job/${id}`,{method:'POST'}).then((respons)=> respons.json())
+    return fetch(`https://${ip}/Job/${id}`,{method:'POST'}).then((respons)=> respons.json())
 }
 
 // application requests
@@ -75,7 +75,7 @@ const getApplication = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/application/${data.id}`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/application/${data.id}`,requestOptions).then((respons)=> respons.json())
 }
 
 const getApplications = async(data)=>{
@@ -88,7 +88,7 @@ const getApplications = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/application/all`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/application/all`,requestOptions).then((respons)=> respons.json())
 }
 
 const apply = async(data)=>{
@@ -98,7 +98,7 @@ const apply = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/apply`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/apply`,requestOptions).then((respons)=> respons.json())
 }
 
 // Delete Application
@@ -110,7 +110,7 @@ const deleteApp = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/deletApplication`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/deletApplication`,requestOptions).then((respons)=> respons.json())
 }
 
 // Jobs - Application
@@ -121,7 +121,7 @@ const jobsApplied = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/jobApplied`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/jobApplied`,requestOptions).then((respons)=> respons.json())
 }
 
 const jobsCreated = async(data)=>{
@@ -131,7 +131,7 @@ const jobsCreated = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/createdJobs`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/createdJobs`,requestOptions).then((respons)=> respons.json())
 }
 
 // get applicants of a job
@@ -142,7 +142,7 @@ const getApplicantstoJob = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}/getApplicants`,requestOptions).then((respons)=> respons.json())
+    return fetch(`https://${ip}/getApplicants`,requestOptions).then((respons)=> respons.json())
 }
 
 export {
