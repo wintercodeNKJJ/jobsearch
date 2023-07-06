@@ -1,4 +1,5 @@
 const ip = '192.168.43.74'
+const port = '4000'
 
 //user
 const getUser = async(data)=>{
@@ -7,7 +8,7 @@ const getUser = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}:5000/user`,requestOptions).then((respons)=>{
+    return fetch(`http://${ip}:${port}/user`,requestOptions).then((respons)=>{
         // respons.json()
         respons.json().then(res=>{
             console.log("store",JSON.stringify(res))
@@ -22,14 +23,14 @@ const registerUser = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}:5000/register`,requestOptions).then((respons)=>{
+    return fetch(`http://${ip}:${port}/register`,requestOptions).then((respons)=>{
         respons.json()
     })
 }
 
 //Jobs Query
 const getJobs = async()=>{
-    return fetch(`http://${ip}:5000/Jobs`,{method:'get'}).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/Jobs`,{method:'get'}).then((respons)=> respons.json())
 }
 
 const createJob = async(job)=>{
@@ -38,7 +39,7 @@ const createJob = async(job)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(job)
     }
-    return fetch(`http://${ip}:5000/createJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/createJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const editJob = async(job)=>{
@@ -47,7 +48,7 @@ const editJob = async(job)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(job)
     }
-    return fetch(`http://${ip}:5000/editJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/editJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const deleteJob = async(data)=>{
@@ -56,11 +57,11 @@ const deleteJob = async(data)=>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
     }
-    return fetch(`http://${ip}:5000/deleteJob`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/deleteJob`,requestOptions).then((respons)=> respons.json())
 }
 
 const getJob = async(id)=>{
-    return fetch(`http://${ip}:5000/Job/${id}`,{method:'POST'}).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/Job/${id}`,{method:'POST'}).then((respons)=> respons.json())
 }
 
 // application requests
@@ -74,7 +75,7 @@ const getApplication = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/application/${data.id}`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/application/${data.id}`,requestOptions).then((respons)=> respons.json())
 }
 
 const getApplications = async(data)=>{
@@ -87,7 +88,7 @@ const getApplications = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/application/all`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/application/all`,requestOptions).then((respons)=> respons.json())
 }
 
 const apply = async(data)=>{
@@ -97,7 +98,7 @@ const apply = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/apply`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/apply`,requestOptions).then((respons)=> respons.json())
 }
 
 // Delete Application
@@ -109,7 +110,7 @@ const deleteApp = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/deletApplication`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/deletApplication`,requestOptions).then((respons)=> respons.json())
 }
 
 // Jobs - Application
@@ -120,7 +121,7 @@ const jobsApplied = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/jobApplied`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/jobApplied`,requestOptions).then((respons)=> respons.json())
 }
 
 const jobsCreated = async(data)=>{
@@ -130,7 +131,7 @@ const jobsCreated = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/createdJobs`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/createdJobs`,requestOptions).then((respons)=> respons.json())
 }
 
 // get applicants of a job
@@ -141,7 +142,7 @@ const getApplicantstoJob = async(data)=>{
         body: JSON.stringify(data)
     }
 
-    return fetch(`http://${ip}:5000/getApplicants`,requestOptions).then((respons)=> respons.json())
+    return fetch(`http://${ip}:${port}/getApplicants`,requestOptions).then((respons)=> respons.json())
 }
 
 export {
