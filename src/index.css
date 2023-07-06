@@ -42,3 +42,37 @@ code {
 .Roboto-medium{
   font-family: 'Roboto-medium','oxygen','sans-serif';
 }
+
+@layer components {
+  .navbtn-show{
+    @apply rounded-xl z-20 absolute md:hidden top-2 left-2 backdrop-blur p-2 translate-x-56 transition-all duration-500 border border-gray-300;
+  }
+
+  .navbtn-hide{
+    @apply rounded-xl z-20 absolute md:hidden top-2 left-2 backdrop-blur p-2 transition-all duration-500 border border-gray-300;
+  }
+
+  .navbody-show{
+    @apply h-screen min-w-[250px] absolute z-10 bg-gray-300 md:static transition-all duration-500;
+  }
+
+  .navbody-hide{
+    @apply h-screen min-w-[250px] absolute z-10 bg-gray-300 md:static md:translate-x-0 -translate-x-full transition-all duration-500;
+  }
+
+  .navditailsbtn-show{
+    @apply rounded-xl z-20 absolute top-2 right-1/2 backdrop-blur border border-gray-200 p-2 transition-all duration-500 md:hidden;
+  }
+
+  .navditailsbtn-hide{
+    @apply rounded-xl z-20 absolute top-2 right-1/2 backdrop-blur border border-gray-200 p-2 transition-all duration-500 hidden;
+  }
+
+  .navditailsbody-show{
+    @apply absolute md:static w-screen md:w-full duration-500;
+  }
+
+  .navditailsbody-hide{
+    @apply absolute md:static md:translate-x-0 w-screen md:w-full translate-x-full transition-all duration-500;
+  }
+}

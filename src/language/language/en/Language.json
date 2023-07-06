@@ -7,7 +7,7 @@
     "favorite":"your favorite",
     "subscrib":"Subscribed category",
     "profile":"Personal Profile",
-    "myJobs":"My Jobs offers",
+    "myJobs":"Jobs",
     "aboutus":"About",
     "services":"Services",
     "contact":"Contact",
@@ -15,5 +15,6 @@
     "heading": "Welcome to india",  
     "about": "About India",  
     "lan":"Select Language",  
-    "detail":"India  is a country in South Asia. It is the seventh-largest country by area, the second-most populous country.India is a very beautiful country"
+    "detail":"India  is a country in South Asia. It is the seventh-largest country by area, the second-most populous country.India is a very beautiful country",
+    "addJob":"job"
 }
