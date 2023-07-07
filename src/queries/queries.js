@@ -1,4 +1,5 @@
-const ip = 'http://localhost:4000'
+const ip = 'https://jobsearch-backend.vercel.app'
+// const ip = 'http://localhost:4000'
 // const port = '4000'
 
 //user
