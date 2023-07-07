@@ -42,6 +42,8 @@ const Layout = () => {
         // setApplication(res)
       })
 
+      console.log('user object',localStorage.getItem('user'))
+
       if(localStorage.getItem('user')){
         jobsApplied({id:JSON.parse(localStorage.getItem('user')).id}).then(res=>{
           res.sort((a,b)=>{
@@ -71,18 +73,21 @@ const Layout = () => {
       }else{
         setJobsApp([])
         setJobCreated([])
+        console.log('no user in the local storage')
       }
       
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [render])
     
     
-    const login = (data)=>{
+    const login = async(data)=>{
       console.log(data)
-      getUser(data).then(res=>{
+      const user1 = await getUser(data).then(res=>{
         console.log('user',res)
+        return res
         // setUser(res)       
       })
+      return user1
     }
 
     const register = (data)=>{

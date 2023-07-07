@@ -32,12 +32,13 @@ const LoginModal = ({connect}) => {
   function LoginControlle(event){
     event.preventDefault();
     console.log("Event");
-    connect({name:name,password:password})
+    connect({name:name,password:password}).then(res=>{
+      history('/Jobs')
+      notify('success',name+' loged in',5000)
+      closeMod()
+    })
     // loginUser()
     login()
-    notify('success',name+' loged in',5000)
-    history('/Jobs')
-    closeMod()
   }
 
   const closeMod = () => {
