@@ -31,7 +31,7 @@ const registerUser = async(data)=>{
 
 //Jobs Query
 const getJobs = async()=>{
-    return fetch(`${ip}/Jobs`,{method:'get'}).then((respons)=> respons.json())
+    return fetch(`${ip}/jobs`,{method:'get'}).then((respons)=> respons.json())
 }
 
 const createJob = async(job)=>{
