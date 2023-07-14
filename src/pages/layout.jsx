@@ -9,6 +9,8 @@ import { getApplications, getJobs, getUser, jobsApplied, jobsCreated, registerUs
 import Applyed from '../component/display/jobs/applyed';
 import MyJobs from '../component/display/jobs/myJobs';
 import Notify from '../mainComponents/notification/notify';
+import Landing from './HomePage/landing';
+import DitailsHolder from './DitailsPage/ditailsHolder';
 
 
 
@@ -112,11 +114,7 @@ const Layout = () => {
           <div className='w-screen md:w-full grid grid-cols-1 md:grid-cols-2 h-full overflow-hidden relative bg-base-200'>
             <div className=' col-span-1 md:col-span-1 bg-base-100'>
               <Routes>
-                <Route path='/' element={
-                  <div className=' h-screen flex items-center justify-center bg-base-300' >
-                    <p className='p-1 rounded-lg bg-base-200'>Nothing to show</p>
-                  </div>
-                }/>
+                <Route path='/' element={<Landing/>}/>
                 <Route path="/Jobs/*" element={<JobOffer info={info}/>} />
                 <Route path="/Profile" element={<ProfileInfo/>}/>
                 <Route path="/Cathegory/*" element={<Cathegory info={info}/>}/>
@@ -129,6 +127,7 @@ const Layout = () => {
             </div>
             <div className={showditail?'navditailsbody-show':'navditailsbody-hide'}>
             <Routes>
+                <Route path='/' element={<DitailsHolder/>}/>
                 <Route exact path="/Jobs/:id" Component={DitailsJ}/>
                 <Route exact path="/Cathegory/:id" Component={DitailsJ}/>
                 <Route exact path="/CreatedJobs/:id" Component={JobApplicants}/>

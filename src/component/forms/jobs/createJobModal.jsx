@@ -82,7 +82,7 @@ const CreateJobModal = () => {
 
   return (
     <div>
-      <dialog id="my_modal_3" className="bg-white rounded-xl md:w-[800px] w-full">
+      <dialog id="my_modal_3" className="bg-white bg-opacity-90 rounded-xl md:w-[800px] w-full">
         <form onSubmit={CreateJob} >
           <h3 className="font-bold text-2xl m-2 flex justify-start">Create Job Offer</h3>
           <div className="grid grid-cols-2">
