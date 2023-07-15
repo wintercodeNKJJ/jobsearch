@@ -12,8 +12,11 @@ const getUser = async(data)=>{
     return fetch(`${ip}/user`,requestOptions).then((respons)=>{
         // respons.json()
         respons.json().then(res=>{
-            console.log("store",JSON.stringify(res))
-            localStorage.setItem('user',JSON.stringify(res))
+            console.log("Storage",res)
+            if(res.name){
+                localStorage.setItem('user',JSON.stringify(res))
+                console.log('stored',JSON.stringify(res))
+            }
         })
     })
 }
