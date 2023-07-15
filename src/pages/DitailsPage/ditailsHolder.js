@@ -2,8 +2,8 @@ import React from 'react'
 
 const DitailsHolder = () => {
   return (
-    <div className=' h-screen bg-base-300 bg-[url("/src/assets/bgwelcom.jpg")]'>
-      <div className='h-full w-full p-3 flex flex-col gap-3 items-center justify-center backdrop-blur'>
+    <div className=' overflow-y-scroll h-screen bg-base-300 bg-[url("/src/assets/bgwelcom.jpg")]'>
+      <div className='h-full w-full p-3 mt-5 flex flex-col gap-3 items-center justify-center backdrop-blur'>
         <div className='flex flex-col items-baseline p-3 text-left gap-4 bg-base-200 duration-1000 bg-opacity-70 rounded-lg shadow w-full'>
           <h1 className='text-3xl font-bold text-blue-500'>Instructions</h1>
         </div>

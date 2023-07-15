@@ -120,12 +120,12 @@ const RregisterModal = ({register}) => {
             </div>
           </div>
 
-          <div className="flex gap-2 items-end justify-between mx-2 py-2">
+          <div className="flex gap-2 items-end justify-between mx-2 py-2 flex-col-reverse md:flex-row">
             {/* if there is a button in form, it will close the modal */}
             <div className="flex items-center">
-              <button type="button" className="btn btn-accent" formMethod="dialog" onClick={() => {window.my_modal_1.showModal();closeRegister()}}>Back to login</button>
+              <button type="button" className="btn btn-accent shadow-lg" formMethod="dialog" onClick={() => {window.my_modal_1.showModal();closeRegister()}}>Back to login</button>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex justify-between w-full md:w-fit items-center gap-2">
               <button type="submit" className="btn btn-success">Register</button>
               <button type="button" className="btn" onClick={closeRegister} formMethod="dialog">Close</button>
             </div>
